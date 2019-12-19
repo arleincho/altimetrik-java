@@ -1,0 +1,38 @@
+package com.altimetrik.demo.utils;
+
+import java.io.Serializable;
+import java.util.ArrayList;
+
+import com.altimetrik.demo.dao.College;
+import com.altimetrik.demo.dao.Paginator;
+
+public class Response implements Serializable  {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
+	private ArrayList<College> result;
+	private Paginator metadata;
+	
+	public Response() {
+		result = new ArrayList<>();
+    }
+	
+	
+	public Paginator getMetadata() {
+		return metadata;
+	}
+	public void setMetadata(Paginator metadata) {
+		this.metadata = metadata;
+	}
+	public ArrayList<College> getResult() {
+		return result;
+	}
+	public void setResult(College college) {
+		this.result.add(college);
+	}
+	
+	
+}

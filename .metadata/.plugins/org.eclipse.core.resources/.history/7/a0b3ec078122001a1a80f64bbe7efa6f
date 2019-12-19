@@ -1,0 +1,10 @@
+package com.altimetrik.demo.utils;
+
+
+import com.altimetrik.demo.dao.College;
+
+public interface Serivce {
+	
+	public College[] search();
+
+}

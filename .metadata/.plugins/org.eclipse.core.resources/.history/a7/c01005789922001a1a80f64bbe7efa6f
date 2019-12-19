@@ -1,0 +1,21 @@
+package com.altimetrik.demo.utils;
+
+import java.io.Serializable;
+import java.util.List;
+
+import com.altimetrik.demo.dao.College;
+import com.altimetrik.demo.dao.Paginator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+public class Return implements Serializable {
+	
+	
+	@JsonProperty("results")
+	private List<College> results;
+
+	@JsonProperty("paginator")
+	private Paginator metadata;
+	
+	
+	
+}

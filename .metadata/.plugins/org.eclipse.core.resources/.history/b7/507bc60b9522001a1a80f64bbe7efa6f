@@ -1,0 +1,24 @@
+package com.altimetrik.demo.utils;
+
+import java.util.Comparator;
+
+import com.altimetrik.demo.dao.CollegeResponse;
+
+public class CollegesSort implements Comparator<CollegeResponse>{
+
+	@Override
+	public int compare(CollegeResponse o1, CollegeResponse o2) {
+		
+		
+		System.out.println("pppp" + o1.getDetail().get("size"));
+		
+		int i = Integer.valueOf(o1.getDetail().get("size").toString());
+		int j = Integer.valueOf(o1.getDetail().get("size").toString());
+//		(int)o1.getDetail().get("size").
+		if (i >= j) {
+			return 1;
+		}
+		return 0;
+	}
+
+}

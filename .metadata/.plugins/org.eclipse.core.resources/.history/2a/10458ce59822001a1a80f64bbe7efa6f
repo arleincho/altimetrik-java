@@ -1,0 +1,63 @@
+package com.altimetrik.demo.utils;
+
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+import com.altimetrik.demo.dao.College;
+import com.altimetrik.demo.dao.CollegeResponse;
+import com.altimetrik.demo.dao.Paginator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+public class Response implements Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+
+	@JsonProperty("results")
+	private List<CollegeResponse> results;
+
+	@JsonProperty("metadata")
+	private Paginator metadata;
+
+	public Response() {
+		results = new ArrayList<>();
+	}
+
+	public Paginator getMetadata() {
+		return metadata;
+	}
+
+	public void setMetadata(Paginator metadata) {
+		this.metadata = metadata;
+	}
+
+	public List<CollegeResponse> getResults() {
+		return results;
+	}
+
+	public void setResults(List<CollegeResponse> college) {
+		this.results = college;
+	}
+
+	public ArrayList<College> sort() {
+
+		ArrayList<College> news = new ArrayList<College>();
+		for (CollegeResponse item : this.results) {
+			news.add(new College((int) item.getDetail().get("id"), (String) item.getDetail().get("name"),
+					(int) item.getDetail().get("size")));
+		}
+
+		Collections.sort(news, new Comparator<College>() {
+			public int compare(College o1, College o2) {
+				return o1.getSize() - o2.getSize();
+			}
+		});
+		return news;
+
+	}
+
+}

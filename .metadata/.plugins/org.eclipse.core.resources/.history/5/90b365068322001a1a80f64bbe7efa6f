@@ -1,0 +1,7 @@
+package com.altimetrik.demo.utils;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+@JsonIgnoreProperties(ignoreUnknown=true)
+public class Wrapper {
+     private MyPojo myPojo;
+}

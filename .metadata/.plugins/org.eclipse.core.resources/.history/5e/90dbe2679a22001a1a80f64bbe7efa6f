@@ -1,0 +1,39 @@
+package com.altimetrik.demo.utils;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
+
+import com.altimetrik.demo.dao.College;
+import com.altimetrik.demo.dao.CollegeResponse;
+
+@Service
+public class ServiceImpl implements Serivce {
+
+	@Autowired
+	RestTemplate client;
+
+	@Override
+	public Response search() {
+
+		String url = "https://api.data.gov/ed/collegescorecard/v1/schools.json?school.degrees_awarded.predominant=2,3&api_key=0OPgPUihcxtFhUd6ooh6pGHmdyA10ThPdN3KN4tK&distance=20mi&fields=id,school.name,2012.student.size&zip=32839&per_page=20&page=0";
+
+//		ArrayList<CollegeResponse> list = new ArrayList<CollegeResponse>();
+		
+		Response response = client
+				  .getForObject(url, Response.class);
+
+		response.sort();
+		
+		response.getMetadata().setPages();
+		ReturnResponse  returnReponse = new ReturnResponse(response.getMetadata(), response.getList());
+		
+//		System.out.println(response.getMetadata() +  " " + ordered);
+		
+		return response;
+	}
+
+}

@@ -1,0 +1,23 @@
+package com.altimetrik.demo.utils;
+
+import java.util.Comparator;
+
+import com.altimetrik.demo.dao.College;
+
+public class CollegesSort implements Comparator<College>{
+	
+	
+	private String year = "";
+
+	@Override
+	public int compare(College o1, College o2) {
+		
+		String key = year + ".student.size";
+		// TODO Auto-generated method stub
+		if ((int)o2.getDetail().get(key) > (int)o1.getDetail().get(key)) {
+			return 1;
+		}
+		return 0;
+	}
+
+}

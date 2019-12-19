@@ -1,0 +1,8 @@
+package com.altimetrik.demo.rest;
+
+
+
+@RestController
+public class Search {
+
+}

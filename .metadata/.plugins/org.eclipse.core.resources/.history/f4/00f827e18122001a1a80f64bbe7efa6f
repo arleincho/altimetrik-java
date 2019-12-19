@@ -1,0 +1,11 @@
+package com.altimetrik.demo.utils;
+
+import com.altimetrik.demo.dao.College;
+import com.altimetrik.demo.dao.Paginator;
+
+public class Response {
+
+	private Paginator metadata;
+	private College[] colleges;
+	
+}

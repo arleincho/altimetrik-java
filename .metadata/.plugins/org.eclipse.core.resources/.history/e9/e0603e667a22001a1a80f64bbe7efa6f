@@ -1,0 +1,14 @@
+package com.altimetrik.demo.utils;
+
+
+
+public class Service {
+	
+	public static class ApiData{
+		
+		@AutoWired
+		RestTemplate rest;
+		
+	}
+
+}

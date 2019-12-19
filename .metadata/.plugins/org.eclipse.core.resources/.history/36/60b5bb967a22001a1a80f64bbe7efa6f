@@ -1,0 +1,23 @@
+package com.altimetrik.demo.utils;
+
+import java.util.ArrayList;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.client.RestTemplate;
+
+import com.altimetrik.demo.dao.College;
+
+public class Service {
+	
+	public static class ApiData{
+		
+		@Autowired
+		RestTemplate rest;
+		
+		public ArrayList<College> search(){
+			return null;
+		}
+		
+	}
+
+}

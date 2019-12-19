@@ -1,0 +1,66 @@
+package com.altimetrik.demo.utils;
+
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+import com.altimetrik.demo.dao.CollegeResponse;
+import com.altimetrik.demo.dao.Paginator;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+public class Response implements Serializable  {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
+	
+	@JsonProperty("results")
+	private List<CollegeResponse> results;
+	
+	@JsonProperty("metadata")
+	private Paginator metadata;
+	
+	public Response() {
+		results = new ArrayList<>();
+    }
+	
+	public Paginator getMetadata() {
+		return metadata;
+	}
+	public void setMetadata(Paginator metadata) {
+		this.metadata = metadata;
+	}
+	public List<CollegeResponse> getResults() {
+		return results;
+	}
+	public void setResults(List<CollegeResponse> college) {
+		this.results = college;
+	}
+	
+//	public Comparator<Map<String, String>> mapComparator = new Comparator<Map<String, String>>() {
+//	    public int compare(Map<String, String> m1, Map<String, String> m2) {
+//	        return m1.get("name").compareTo(m2.get("name"));
+//	    }
+//	}
+	
+	
+	public void sort() {
+		
+
+		
+		
+//		Collections.sort(this.results, mapComparator);
+		
+		 Collections.sort(mapList, new Comparator<Map<String, Object>>() {
+		        public int compare(final Map<String, String> o1, final Map<String, String> o2) {
+		            return o1.get("name").compareTo(o2.get("name"));
+		        }
+		    });
+		 
+		 
+	}
+	
+}

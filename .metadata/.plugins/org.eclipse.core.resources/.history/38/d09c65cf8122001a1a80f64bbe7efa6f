@@ -1,0 +1,7 @@
+package com.altimetrik.demo.utils;
+
+public class Response {
+
+	private Paginator metadata;
+	private 
+}

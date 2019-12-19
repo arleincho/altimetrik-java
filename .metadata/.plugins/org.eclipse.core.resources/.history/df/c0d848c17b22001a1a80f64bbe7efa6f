@@ -1,0 +1,7 @@
+package com.altimetrik.demo.utils;
+
+public interface Serivce {
+	
+	public ArrayList<College> search();
+
+}

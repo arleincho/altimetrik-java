@@ -1,0 +1,8 @@
+package com.altimetrik.demo.dao;
+
+public class Response {
+	
+	private Colleges[] colleges;
+	private 
+
+}

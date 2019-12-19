@@ -1,0 +1,15 @@
+package com.altimetrik.demo.utils;
+import java.io.Serializable;
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
+//@JsonIgnoreProperties(ignoreUnknown=true)
+public class Wrapper  implements Serializable {
+	
+     private Response response;
+     
+     
+     public Response getResponse() {
+    	 return this.response;
+     }
+}

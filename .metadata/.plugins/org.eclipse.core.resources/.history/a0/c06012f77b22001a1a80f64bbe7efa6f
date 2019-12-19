@@ -1,0 +1,29 @@
+package com.altimetrik.demo.utils;
+
+import java.util.ArrayList;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Bean;
+import org.springframework.stereotype.Service;
+import org.springframework.web.client.RestTemplate;
+
+import com.altimetrik.demo.dao.College;
+
+
+@Service
+public class ServiceImpl implements Serivce{
+
+	@Autowired
+	RestTemplate rest;
+
+	@Override
+	public ArrayList<College> search() {
+
+		ArrayList<College> list = new ArrayList<College>();
+		list.add(new College(2, "name", 23));
+		list.add(new College(2, "name 1", 456));
+		list.add(new College(2, "name 2", 324));
+		return list;
+	}
+
+}

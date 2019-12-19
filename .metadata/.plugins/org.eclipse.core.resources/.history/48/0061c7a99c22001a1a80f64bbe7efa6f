@@ -1,0 +1,8 @@
+package com.altimetrik.demo.utils;
+
+
+public interface Serivce {
+	
+	public ReturnResponse search(String degres, int year, int per_page, int zip, String distance, int page);
+	
+}

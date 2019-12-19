@@ -1,0 +1,9 @@
+package com.altimetrik.demo.utils;
+
+
+
+public interface Serivce {
+	
+	public Response search();
+
+}

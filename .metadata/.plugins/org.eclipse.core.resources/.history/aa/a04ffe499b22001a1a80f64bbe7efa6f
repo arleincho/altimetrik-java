@@ -1,0 +1,8 @@
+package com.altimetrik.demo.utils;
+
+import org.springframework.web.bind.annotation.RequestParam;
+
+public interface Serivce {
+	
+	public ReturnResponse search(String degres, int year, int per_page, int zip, String distance, int page);
+}

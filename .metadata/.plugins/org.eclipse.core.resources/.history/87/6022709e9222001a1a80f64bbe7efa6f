@@ -1,0 +1,49 @@
+package com.altimetrik.demo.dao;
+
+import java.io.Serializable;
+import java.util.LinkedHashMap;
+import java.util.Map;
+
+import com.fasterxml.jackson.annotation.JsonAnySetter;
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+//import com.fasterxml.jackson.annotation.JsonIgnoreType;
+
+
+
+//@JsonIgnoreType( ignoreUnknown = true )
+@JsonAutoDetect
+public class CollegeResponse implements Serializable  {
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
+    Map<String, Object> details = new LinkedHashMap<>();
+    
+    @JsonAnySetter
+    void setDetail(String key, Object value) {
+    	String[] parts = key.split("\\.");
+    	String keyMap = key;
+    	System.out.println("el key es:" +  key.split("\\.") + "   " +  key);
+    	if (parts.length > 0) {
+    		keyMap = parts[parts.length - 1];
+    	}
+    	if (keyMap == "size" && value == null) {
+    		value = 0;
+    	}
+        details.put(keyMap, value);
+    }
+    
+    public Map<String, Object> getDetail(){
+    	return this.details;
+    }
+    
+	@Override
+	public String toString() {
+		return "details: " + this.details;
+	}
+
+}

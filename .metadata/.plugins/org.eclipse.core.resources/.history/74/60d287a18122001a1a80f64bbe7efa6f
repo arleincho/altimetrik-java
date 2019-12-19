@@ -1,0 +1,9 @@
+package com.altimetrik.demo.rest;
+
+public class Paginator {
+	
+	private int total;
+	private int page;
+	private int per_page;
+
+}

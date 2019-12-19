@@ -1,0 +1,12 @@
+package com.altimetrik.demo.rest;
+
+import org.springframework.web.bind.annotation.RestController;
+
+@RestController
+@MappingRequest("/")
+public class CollegeSearch {
+	
+	
+	public 
+
+}

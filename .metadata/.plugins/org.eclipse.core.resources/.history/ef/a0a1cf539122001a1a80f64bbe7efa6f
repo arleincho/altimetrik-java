@@ -1,0 +1,13 @@
+package com.altimetrik.demo.utils;
+
+
+import java.util.ArrayList;
+import java.util.List;
+
+import com.altimetrik.demo.dao.College;
+
+public interface Serivce {
+	
+	public Response search();
+
+}

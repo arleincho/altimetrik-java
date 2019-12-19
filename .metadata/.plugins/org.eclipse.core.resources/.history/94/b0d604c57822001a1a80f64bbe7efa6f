@@ -1,0 +1,22 @@
+package com.altimetrik.demo.rest;
+
+import java.util.ArrayList;
+
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.altimetrik.demo.dao.College;
+
+@RestController
+@RequestMapping("/")
+public class CollegeSearch {
+	
+	
+	@GetMapping
+	public ResponseEntity<List<College>> search() {
+		List<College> list = new ArrayList<College>();
+	}
+
+}

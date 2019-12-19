@@ -1,0 +1,14 @@
+package com.altimetrik.demo.utils;
+
+import java.util.Comparator;
+
+import com.altimetrik.demo.dao.College;
+
+public class CollegesSort implements Comparator<College>{
+	
+	
+	public int comporeTo(College ob1, College ob2) {
+		return 0
+	}
+
+}

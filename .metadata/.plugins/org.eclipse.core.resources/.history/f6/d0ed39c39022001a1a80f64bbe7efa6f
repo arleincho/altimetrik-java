@@ -1,0 +1,78 @@
+package com.altimetrik.demo.dao;
+
+import java.io.Serializable;
+import java.util.LinkedHashMap;
+import java.util.Map;
+
+import com.fasterxml.jackson.annotation.JsonAnySetter;
+import com.fasterxml.jackson.annotation.JsonAutoDetect;
+import com.fasterxml.jackson.annotation.JsonProperty;
+
+//import com.fasterxml.jackson.annotation.JsonIgnoreType;
+
+
+
+//@JsonIgnoreType( ignoreUnknown = true )
+@JsonAutoDetect
+public class College implements Serializable  {
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
+    Map<String, Object> details = new LinkedHashMap<>();
+    
+    @JsonAnySetter
+    void setDetail(String key, Object value) {
+        details.put(key, value);
+    }
+    
+    public Map<String, Object> getDetail(){
+    	return this.details;
+    }
+    
+	
+    
+//    @JsonProperty("school.name")
+//	private String name;
+//    
+////    @JsonProperty("id")
+//	private int id;
+//    
+////    @JsonProperty("2012.student.size")
+//	private int size;
+//	
+//	public College(int id, String name, int size) {
+//		this.id = id;
+//		this.name = name;
+//		this.size = size;
+//	}
+//	
+//	public int getId() {
+//		return id;
+//	}
+//	public void setId(int id) {
+//		this.id = id;
+//	}
+//	public String getName() {
+//		return name;
+//	}
+//	public void setName(String name) {
+//		this.name = name;
+//	}
+//	public int getSize() {
+//		return size;
+//	}
+//	public void setSize(int size) {
+//		this.size = size;
+//	}
+	
+	@Override
+	public String toString() {
+		return "details: " + this.details; 
+	}
+	
+	
+
+}

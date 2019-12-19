@@ -1,0 +1,31 @@
+package com.altimetrik.demo.rest;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.altimetrik.demo.dao.College;
+import com.altimetrik.demo.utils.ServiceImpl;
+
+@RestController
+@RequestMapping("/")
+public class CollegeSearch {
+	
+	@Autowired
+	ServiceImpl service;
+	
+	@GetMapping
+	public ResponseEntity<List<College>> search() {
+		List<College> list = service.search();
+		
+		
+		
+		return ResponseEntity.ok(list);
+	}
+
+}
